@@ -1,0 +1,27 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #dedede;
+}
+
+.navigator{
+	overflow: hidden;
+	background: #333333;
+}
+.navigator h1{
+	float: left;
+}
+.navigator ul{
+	float: right;
+}
+.navigator ul li{
+	float: left;
+	margin: 15px;
+	color: black;
+}
+.navigator a{
+	color: white;
+}
