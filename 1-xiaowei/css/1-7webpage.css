@@ -1,0 +1,448 @@
+/*页面整体样式*/
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 1280px;
+	height: 4554px;
+	margin: 0 auto;
+}
+header, footer{
+	width: 100%;
+	height: 60px;
+}
+/*-------------------顶部-----------------------*/
+/*顶部logo样式*/
+.logo{
+	width: 100px;
+	height: 100%;
+	margin-left: 50px;
+	float: left;
+}
+.logo img{
+	margin: 10px 10px 0 0;
+}
+.logo span{
+	position: absolute;
+	top: 20px;
+}
+/*顶部导航栏*/
+header ul{
+	list-style: none;
+	float: left;
+	width: 450px;
+	height: 100%;
+	margin-left: 500px;	
+}
+header ul li{
+	float: left;
+	width: 85px;
+	height: 55px;
+	line-height: 55px;
+	text-align: center;
+	color: gray;
+	cursor: pointer;
+	/*border-bottom: 5px solid red;*/
+}
+/*顶部登录区*/
+.login{
+	width: 60px;
+	height: 100%;
+	float: left;
+}
+.login img{
+	margin-top: 14px;
+}
+.login span{
+	width: 35px;
+	position: absolute;
+	top: 16px;
+	color: #DF373D;
+	cursor: pointer;
+}
+/*-------------------中部--------------------*/
+/*主体部分整体样式*/
+.wrapper{
+	width: 100%;
+	height: 4430px;
+}
+/*第一部分*/
+.content1{
+	width: 100%;
+	height: 690px;
+	background-image: url("../imgs/1-7/banner1.jpg");
+	color: #ffffff;
+}
+.content1_text{
+	width: 400px;
+	height: 300px;
+	position: relative;
+	top: 200px;
+	left: 150px;
+}
+.content1 h1{
+	font: 48px arial;
+}
+.content1 p{
+	font: 18px "楷体";
+	margin: 30px 0 50px 0;
+}
+#content1_button{
+	width: 250px;
+	height: 50px;
+	background-color: #DF373D;
+	font: 26px "楷体";
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+}
+/*第二部分*/
+.content2{
+	width: 100%;
+	height: 250px;
+}
+.content2 p{
+	width: 100%;
+	height: 125px;
+}
+.content2 p span{
+	display: inline-block;
+	width: 315px;
+	text-align: center;
+	line-height: 110px;
+	padding-top: 20px;
+}
+.content2 ul{
+	width: 100%;
+	height: 50px;
+	list-style: none;
+}
+.content2 ul li{
+	width: 315px;
+	text-align: center;
+	float: left;
+	border-right: 2px solid gray;
+	color: gray;
+}
+.content2 ul li:last-child{ /*消除最后一格的边框*/
+	border-right: none;
+}
+.content2 ul li span{
+	width: 200px;
+	margin: 0 auto;
+	display: inline-block;
+}
+/*第三部分*/
+.content3{
+	width: 100%;
+	height: 360px;
+	text-align: center;
+	background: #ededec;
+}
+.content3 img{
+	margin-top: 80px;
+}
+.content3 p{
+	margin-top: 40px;
+	font-size: 48px;
+	color: #a1a1a1;
+}
+/*第四部分*/
+.content4{
+	width: 100%;
+	height: 340px;
+	text-align: center;
+	background-image: url("../imgs/1-7/banner4.jpg");
+}
+.content4 p{
+	width: 100%;
+	height: 120px;
+	font-size: 20px;
+	color: #ffffff;
+	padding-top: 50px;
+}
+.content4 p span{
+	display: block;
+	font-size: 10px;
+}
+.content4 ul{
+	width: 1100px;
+	height: 170px;
+	list-style: none;
+	display: inline-block;
+	margin: 0 auto;
+}
+.content4 ul li{
+	float: left;
+	margin-left: 20px;
+}
+.content4 ul li input{
+	width: 200px;
+	height: 37px;
+	text-indent: 10px;
+	border: none;
+}
+.content4 ul li img{
+	position: relative;
+	cursor: pointer;
+}
+#s_incon1{
+	top: 14px;
+}
+#s_incon2{
+	top: 14px;
+}
+#s_incon3{
+	top: 14px;
+}
+#search{
+	width: 235px;
+	height: 37px;
+	background: #ce3e3c;
+	color: #ffffff;
+	line-height: 35px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: 14px;
+}
+/*第五部分*/
+.content5{
+	width: 100%;
+	height: 600px;
+	background-color: #F5F5F5;
+}
+.content5 ul{
+	list-style: none;
+	width: 1080px;		
+	margin: 0 auto;
+}
+.content5 ul li{
+	float: left;
+	width: 220px;
+	height: 400px;
+	margin: 100px 24px 100px 24px;
+	text-align: center;
+}
+.content5 img{
+	border: 1px solid #D0D2CE;
+	border-radius: 2px;
+	box-shadow: 0px 0px 5px #B0B2AF;
+	padding: 10px;
+	background: #ffffff;
+}
+.content5 h2{
+	font: 16px "微软雅黑";
+	padding: 5px;
+}
+.content5 h1{
+	font: 20px "微软雅黑";
+}
+#banner5-2{
+	margin-top: 10px;
+}
+.content5 span{
+	font-size: 10px;
+	color: #B0B2AF;
+}
+/*第六部分*/
+.content6{
+	width: 100%;
+	height: 565px;
+}
+/*左半部分*/
+.content6_left{
+	width: 850px;
+	height: 100%;
+	float: left;
+	background-image: url("../imgs/1-7/banner6.jpg");
+	text-align: center;
+	color: #ffffff;
+	font-family: "微软雅黑";
+}
+.content6_left h2{
+	font: 42px "微软雅黑";
+	margin-top: 150px;
+}
+.content6_left h1{
+	font: 116px Arial;
+}
+.content6_left h3{
+	font: 20px "微软雅黑";
+}
+.content6_left h4{
+	font: 18px "微软雅黑";
+}
+/*右半部分*/
+.content6_right{
+	width: 430px;
+	height: 100%;
+	float: right;
+	text-align: center;
+}
+.content6_right h3{
+	font-size: 20px;
+	margin: 150px 0 20px 0;
+}
+.content6_right h3 span{
+	color: #DF373D;
+}
+.content6_right p{
+	width: 290px;
+	height: 150px;
+	overflow: hidden;
+	margin: 0 auto;
+	color: #ADB3B0;
+	text-align: left;
+	font: 10px "宋体";
+	line-height: 30px;
+}
+#content6_detail{
+	width: 106px;
+	height: 33px;
+	margin: 0 auto;
+	border: 1px solid #DF373D;
+	border-radius: 3px;
+	color: #DF373D;
+	line-height: 33px;
+	font-size: 12px;
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+#content6_dot img{
+	cursor: pointer;
+}
+/*中间的小三角*/
+#trangle1{
+	width: 0;
+	height: 0;
+	border-top: 15px solid transparent;
+    border-right: 30px solid #ffffff;
+    border-bottom: 15px solid transparent;
+	position: relative;
+	top: 280px;
+	left: 820px;
+}
+/*----------三角形的画法-----------*/
+/* 上 */
+/*.san_shang {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid #ff0066;
+}*/
+/* 下 */
+/*.san_xia {
+	width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid red;
+}*/
+/* 左 */
+/*.san_zuo {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid #333;
+}*/
+/* 右 */
+/*.san_you {
+	width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 100px solid #0066ff;
+    border-bottom: 50px solid transparent;
+}*/
+/*第七部分*/
+.content7{
+	width: 100%;
+	height: 520px;
+}
+.content7_left, .content7_middle{
+	width: 425px;
+	height: 100%;
+	font: 20px "微软雅黑";
+	text-align: center;
+	float: left;
+	opacity: 0.9;
+}
+.content7_left{
+	background-color: #DF373D;
+	color: #ffffff;
+}
+.content7_left p, .content7_middle p{
+	margin: 150px 0 10px 0;
+}
+#content7_left_detail{
+	width: 170px;
+	height: 45px;
+	line-height: 45px;
+	margin: 10px auto;
+	border: 1px solid #ffffff;
+	cursor: pointer;
+}
+.content7_middle span{
+	color: #949999;
+}
+#content7_middle_detail{
+	width: 170px;
+	height: 45px;
+	line-height: 45px;
+	margin: 10px auto;
+	border: 1px solid #DF373D;
+	color: #DF373D;
+	cursor: pointer;
+}
+.content7_right{
+	width: 430px;
+	height: 100%;
+	float: right;
+	background-image: url("../imgs/1-7/banner7.jpg");
+	border-radius: 1px;
+}
+#trangle2{
+	width: 0;
+	height: 0;
+	border-top: 15px solid transparent;
+    border-left: 30px solid #ffffff;
+    border-bottom: 15px solid transparent;
+	position: relative;
+	top: 250px;
+	left: 850px;
+}
+/*第八部分*/
+.content8{
+	width: 100%;
+	height: 750px;
+	border-bottom: 1px solid red;
+}
+.content9{
+	width: 100%;
+	height: 360px;
+	border-bottom: 1px solid red;
+}
+/*-------------------底部--------------------*/
+/*底部样式*/
+footer{
+	background-color: #23232A;
+}
+footer p{
+	width: 1200px;
+	margin: 0 auto;
+	/*--先设置字体，再垂直居中--*/
+	font: 12px "宋体",sans-serif;
+	height: 60px;
+	line-height: 60px;
+	color: #ffffff;
+}
+footer span{
+	display: inline-block;
+	float: right;
+}
+footer a{
+	text-decoration: none;
+	color: #ffffff;
+}

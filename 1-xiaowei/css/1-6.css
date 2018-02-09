@@ -5,6 +5,7 @@
 body{
 	width: 980px;
 	height: 1386px;
+	margin: 0 auto;
 }
 /*头部和底部*/
 header, footer, .wrapper{
