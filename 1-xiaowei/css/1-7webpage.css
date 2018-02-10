@@ -416,17 +416,130 @@ header ul li{
 /*第八部分*/
 .content8{
 	width: 100%;
-	height: 750px;
-	border-bottom: 1px solid red;
+	height: 630px;
 }
+.content8_top{
+	width: 100%;
+	height: 85px;
+	margin: 120px auto;
+	text-align: center;
+}
+/*顶部*/
+.content8_top h1{
+	font-size: 20px;
+}
+.content8_top span{
+	color: #DF373D;
+}
+.content8_top p{
+	font-size: 10px;
+	color: #8E8F91;
+}
+/*左下部分*/
+.content8_bottom_left{
+	width: 300px;
+	height: 300px;
+	float: left;
+	margin-left: 130px; 
+}
+.content8_bottom_left p{
+	font-size: 10px;
+	color: #8E8F91;
+	margin-top: 20px;
+}
+.content8_bottom_left h2{
+	font: 18px "微软雅黑";
+}
+.content8_bottom_left span{
+	width: 100%;
+	height: 10px;
+	font-size: 8px;
+	color: #8E8F91;
+	text-align: right;
+	display: block;
+	margin-bottom: 40px;
+}
+.content8_bottom_left span img{
+	margin-right: 10px;
+	cursor: pointer;
+}
+/*右下部分*/
+.content8_bottom_right{
+	width: 650px;
+	height: 300px;
+	float: right;
+	margin-right: 130px;
+}
+.content8_bottom_right input{
+	width: 300px;
+	height: 40px;
+	text-indent: 20px;
+	border: none;
+	background-color: #ededef;
+	margin: 10px; 
+}
+.content8_bottom_right textarea{
+	width: 585px;
+	height: 80px;
+	border: none;
+	background-color: #ededef;
+	margin: 10px;
+	padding: 20px;
+}
+#content8_bottom_submit{
+	width: 625px;
+	height: 40px;
+	border: none;
+	background-color: #ededef;
+	margin: auto 10px;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+}
+/*第九部分*/
 .content9{
 	width: 100%;
 	height: 360px;
-	border-bottom: 1px solid red;
+	background: #32343e;
+	color: #ffffff;
+	text-align: center;
+}
+.content9 h1{
+	font-size: 20px;
+	margin: 80px 0 20px 0;
+	display: inline-block;
+}
+.content9 p{
+	font: 8px "宋体";
+}
+#email_submit{
+	width: 510px;
+	height: 40px;
+	margin: 20px auto;
+}
+#email_submit input{
+	width: 430px;
+	height: 40px;
+	text-indent: 10px;
+	border: none;
+	/*float消除顶端2像素的位移*/
+	float: left;
+}
+#email_submit span{
+	width: 80px;
+	height: 40px;
+	background-color: #8E8F91;
+	display: inline-block;
+	line-height: 40px;
+	cursor: pointer;
+}
+.content9 img{
+	margin: auto 15px;
 }
 /*-------------------底部--------------------*/
 /*底部样式*/
 footer{
+
 	background-color: #23232A;
 }
 footer p{
