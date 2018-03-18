@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>system_page</title>
+	<link rel="stylesheet" href="css/1-9.css">
+</head>
+<body>
+	<div class="navigator">
+		<img id="logo" src="imgs/1-9/logo.png" alt="logo" />
+		<div class="search">
+			<input type="text" />
+		</div>
+		<div class="login">
+			<img src="imgs/1-9/login.png" alt="login">
+			<span>登录</span>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="left_menu">
+			<div class="photo">
+				<img src="imgs/1-9/photo.jpg" alt="">
+				<label>Admin</label>
+			</div>
+			<div class="information">
+				<span id="mark">110<br />收藏</span>
+				<span>313<br />粉丝</span>
+			</div>
+			<ul>
+				<li id="menu1"><img src="imgs/1-9/icon1.png" alt=""><span>个人列表</span>
+					<ul>
+						<li id="menu1-1"><img src="imgs/1-9/icon7.png" alt=""><span>文件夹一</span></li>
+						<li id="menu1-2"><img src="imgs/1-9/icon7.png" alt=""><span>文件夹二</span> 
+							<ul>
+							 	<li id="menu1-2-1"><img src="imgs/1-9/icon8.png" alt=""><span>文档一</span></li>
+							 	<li id="menu1-2-2"><img src="imgs/1-9/icon8.png" alt=""><span>文档二</span></li>
+							 </ul> 
+						</li>
+						<li id="menu1-3"><img src="imgs/1-9/icon7.png" alt=""><span>文件夹三</span></li>
+					</ul>
+				</li>
+				<li id="menu2"><img src="imgs/1-9/icon2.png" alt=""><span>个人收藏</span></li>
+				<li id="menu3"><img src="imgs/1-9/icon3.png" alt=""><span>我的分享</span></li>
+				<li id="menu4"><img src="imgs/1-9/icon4.png" alt=""><span>个人图库</span></li>
+				<li id="menu5"><img src="imgs/1-9/icon5.png" alt=""><span>成长记录</span></li>
+				<li id="menu6"><img src="imgs/1-9/icon6.png" alt=""><span>账户信息</span></li>
+			</ul>
+		</div>
+		<div class="right_page">
+			<div class="path"> C站 ／ 个人列表 ／ 文件夹二 ／ <span>文档一</span> </div>
+			<div class="content">
+				<div class="content-row row1">
+					<div class="row1_position query">
+						<label>查询项</label>
+						<select name="query" id="">
+							<option value="1">第一项</option>
+							<option value="2">第二项</option>
+							<option value="3">第三项</option>
+						</select>
+					</div>
+					<div class="row1_position buyer_seller">
+						<label>买方</label>
+						<select name="buyer" id="">
+							<option value="1">小A</option>
+							<option value="2">小B</option>
+							<option value="3">小C</option>
+						</select>
+						<img src="imgs/1-9/change_icon.png" alt=""><br />
+						<label>卖方</label>
+						<select name="seller" id="">
+							<option value="1">小A</option>
+							<option value="2">小B</option>
+							<option value="3" selected="selected">小C</option>
+						</select>
+					</div>
+					<div class="row1_position time_number">
+						<label>日期</label>
+						<input type="text" placeholder="例：2016-04-01" />						<label>总耗时</label>
+						<select name="time" id="">
+							<option value="2">2天</option>
+							<option value="4">4天</option>
+							<option value="6">6天</option>
+							<option value="8">8天</option>
+						</select>
+						<label>人数</label>
+						<select name="number" id="">
+							<option value="5">5人</option>
+							<option value="10">10人</option>
+							<option value="15">15人</option>
+						</select>
+						<label id="deal_number_tag">成交量</label>
+						<select name="deal" id="deal_number">
+							<option value="10">10项</option>
+							<option value="20">20项</option>
+							<option value="30">30项</option>
+						</select>
+					</div>
+					<div class="search_button">搜索</div>
+				</div>
+				<div class="content-row row2">
+					<div class="price price_change"><img src="imgs/1-9/left_arrow.png" alt=""></div>
+					<div class="price" id="first_price">10:00am <label>¥</label><span>1200</span></div>
+					<div class="price">11:00am <label>¥</label><span>1300</span></div>
+					<div class="price">12:00am <label>¥</label><span>1200</span></div>
+					<div class="price">01:00pm <label>¥</label><span>1400</span></div>
+					<div class="price">02:00pm <label>¥</label><span>1500</span></div>
+					<div class="price">03:00pm <label>¥</label><span>1800</span></div>
+					<div class="price price_change"><img src="imgs/1-9/right_arrow.png" alt=""></div>
+					<div class="price history"><img src="imgs/1-9/history.png" alt="">历史查询</div>
+				</div>
+				<p id="cal_text">2016年4月统计</p>
+				<div class="content-row row3">
+					<div class="calculate" id="calculate_1"><span></span><h3>113311</h3> <label>成交量</label></div>
+					<div class="calculate" id="calculate_2"><span></span><h3>113311</h3> <label>成交量</label></div>
+					<div class="calculate" id="calculate_3"><span></span><h3>113311</h3> <label>成交量</label></div>
+					<div class="calculate" id="calculate_4"><span></span><h3>113311</h3> <label>成交量</label></div>
+				</div>
+				<div class="content-row row4">
+					<div class="row4_left">
+						<span>第一组项目</span>
+						<ul>
+							<li id="project_tab1">项目一</li>
+							<li>项目二</li>
+							<li>项目三</li>
+							<li>项目四</li>
+							<li>项目五</li>
+						</ul>
+						<div class="table_rapper">
+							<table>
+								<tr>
+									<td id="td_1">购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+								</tr>
+								<tr>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+								</tr>
+								<tr>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+								</tr>
+								<tr>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+								</tr>
+								<tr>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+								</tr>
+								<tr>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+									<td>购买材料一</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="row4_right">
+						<span>第一组项目</span>
+						<div class="first_row">
+							<p>标题</p>
+							<label>项目报表三</label>
+						</div>
+						<div class="second_row_left">
+							<p>价格</p>
+							<label>¥ 158</label>
+						</div>
+						<div class="second_row_right">
+							<p>负责人</p>
+							<label>小A</label>
+						</div>
+						<div class="third_row">
+							<p>详细描述</p>
+							<label>该项目目前负责人是....</label>
+						</div>
+						<div class="fourth_row">
+							<input type="checkbox" checked="checked"><label>遵守保密协议</label>
+							<button>搜索</button>
+						</div>
+					</div>
+				</div>
+				<div class="content-row row5">
+					<div class="row5_left">
+						<span>日历</span>
+						<div class="calendar_filter">
+							<select name="year" id="">
+								<option value="2018">2018</option>
+								<option value="2017">2017</option>
+								<option value="2016">2016</option>
+							</select>
+							<select name="month" id="">
+								<option value="1">1月</option>
+								<option value="2">2月</option>
+								<option value="3">3月</option>
+								<option value="4">4月</option>
+								<option value="5">5月</option>
+								<option value="6">6月</option>
+								<option value="7">7月</option>
+								<option value="8">8月</option>
+								<option value="9">9月</option>
+								<option value="10">10月</option>
+								<option value="11">11月</option>
+								<option value="12">12月</option>
+							</select>
+							<select name="day" id="">
+								<option value="0">标注日期</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+							</select>
+							<label>返回今天</label>
+						</div>
+						<div class="calendar_table">
+							<table>
+								<tr id="calendar_row1">
+									<td>一</td>
+									<td>二</td>
+									<td>三</td>
+									<td>四</td>
+									<td>五</td>
+									<td>六</td>
+									<td>日</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>
+										<h3>1</h3> 
+										<label class="red_text">愚人节</label>
+									</td>
+									<td>
+										<h3 class="red_text">2</h3>
+										<label>廿五</label>
+									</td>
+									<td>
+										<h3 class="red_text">3</h3>
+										<label>廿六</label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h3>4</h3> 
+										<label>廿七</label>
+									</td>
+									<td>
+										<h3>5</h3> 
+										<label class="red_text">清明节</label>
+									</td>
+									<td>
+										<h3>6</h3> 
+										<label>廿九</label>
+									</td>
+									<td>
+										<h3>7</h3> 
+										<label>三月</label>
+									</td>
+									<td>
+										<h3>8</h3> 
+										<label>初二</label>
+									</td>
+									<td>
+										<div class="yellow_border">
+											<h3 class="red_text">9</h3> 
+											<label>初三</label>	
+										</div>
+									</td>
+									<td>
+										<h3 class="red_text">10</h3> 
+										<label>初四</label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h3>11</h3> 
+										<label>初五</label>
+									</td>
+									<td>
+										<div class="yellow_border">
+											<h3>12</h3> 
+											<label>初六</label>
+										</div>
+									</td>
+									<td>
+										<h3>13</h3> 
+										<label>初七</label>
+									</td>
+									<td>
+										<h3>14</h3> 
+										<label>初八</label>
+									</td>
+									<td>
+										<h3>15</h3> 
+										<label>初九</label>
+									</td>
+									<td>
+										<h3 class="red_text">16</h3> 
+										<label>初十</label>
+									</td>
+									<td>
+										<h3 class="red_text">17</h3> 
+										<label>十一</label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h3>18</h3> 
+										<label>十二</label>
+									</td>
+									<td>
+										<div class="yellow_border">
+											<h3>19</h3> 
+											<label>十三</label>
+										</div>										
+									</td>
+									<td>
+										<h3>20</h3> 
+										<label>十四</label>
+									</td>
+									<td>
+										<h3>21</h3> 
+										<label>十五</label>
+									</td>
+									<td>
+										<h3>22</h3> 
+										<label>十六</label>
+									</td>
+									<td>
+										<h3 class="red_text">23</h3> 
+										<label>十七</label>
+									</td>
+									<td>
+										<h3 class="red_text">24</h3> 
+										<label>十八</label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h3>25</h3> 
+										<label>十九</label>
+									</td>
+									<td>
+										<h3>26</h3> 
+										<label>廿十</label>
+									</td>
+									<td>
+										<h3>27</h3> 
+										<label>廿一</label>
+									</td>
+									<td>
+										<h3>28</h3> 
+										<label>廿二</label>
+									</td>
+									<td>
+										<h3>29</h3> 
+										<label>廿三</label>
+									</td>
+									<td>
+										<h3 class="red_text">30</h3> 
+										<label>廿四</label>
+									</td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="row5_right">
+						<span>汽车行业品牌榜</span>
+						<table>
+							<tr>
+								<td class="line1">排名</td>
+								<td class="line2">品牌</td>
+							    <td class="line3">搜索指数</td>
+							</tr>
+							<tr>
+								<td class="line1">1</td>
+								<td class="line2">大众</td>
+								<td class="line3">29307333
+									<div class="percent">
+										<label class="percent_left left1"></label>
+										<label class="percent_right right1"></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="line1">2</td>
+								<td class="line2">丰田</td>
+								<td class="line3">29307333
+									<div class="percent">
+										<label class="percent_left left2"></label>
+										<label class="percent_right right2"></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="line1">3</td>
+								<td class="line2">奥迪</td>
+								<td class="line3">29307333
+									<div class="percent">
+										<label class="percent_left left3"></label>
+										<label class="percent_right right3"></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="line1">4</td>
+								<td class="line2">本田</td>
+								<td class="line3">29307333
+									<div class="percent">
+										<label class="percent_left left4"></label>
+										<label class="percent_right right4"></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="line1">5</td>
+								<td class="line2">福特</td>
+								<td class="line3">29307333
+									<div class="percent">
+										<label class="percent_left left5"></label>
+										<label class="percent_right right5"></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="line1">6</td>
+								<td class="line2">宝马</td>
+								<td class="line3">29307333
+									<div class="percent">
+										<label class="percent_left left6"></label>
+										<label class="percent_right right6"></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="line1">7</td>
+								<td class="line2">现代</td>
+								<td class="line3">29307333
+									<div class="percent">
+										<label class="percent_left left7"></label>
+										<label class="percent_right right7"></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="line1">8</td>
+								<td class="line2">起亚</td>
+								<td class="line3">29307333
+									<div class="percent">
+										<label class="percent_left left8"></label>
+										<label class="percent_right right8"></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="line1">9</td>
+								<td class="line2">奔驰</td>
+								<td class="line3">29307333
+									<div class="percent">
+										<label class="percent_left left9"></label>
+										<label class="percent_right right9"></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="line1">10</td>
+								<td class="line2">别克</td>
+								<td class="line3">29307333
+									<div class="percent">
+										<label class="percent_left left10"></label>
+										<label class="percent_right right10"></label>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
