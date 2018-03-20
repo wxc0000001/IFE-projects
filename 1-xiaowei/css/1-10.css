@@ -1,0 +1,40 @@
+/*
+flex布局使用方法：
+http://ife.baidu.com/note/detail/id/952
+*/
+
+.wrapper{
+	/*设置为弹性容器*/
+	display: flex;
+	/*设置排列方向+是否自动换行*/
+	flex-flow: row wrap;
+	/*设置水平方向排列方式*/
+	justify-content: space-between;
+	/*设置垂直方向排列方式*/
+	align-items: center;
+	padding: 20px;
+}
+.box{
+	min-width: 150px;
+	border: 1px solid red;
+	margin-top: 20px;
+}
+.box1{
+	height: 120px;
+}
+.box2{
+	height: 100px;
+}
+.box3{
+	height: 40px;
+	
+}
+.box4{
+	height: 200px;
+	border: 1px solid blue;
+}
+@media all and (max-width: 665px) {
+	.box4{
+		order: -1;
+	}
+}
