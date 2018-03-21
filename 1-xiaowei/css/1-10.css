@@ -6,6 +6,8 @@ http://ife.baidu.com/note/detail/id/952
 .wrapper{
 	/*设置为弹性容器*/
 	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
 	/*设置排列方向+是否自动换行*/
 	flex-flow: row wrap;
 	/*设置水平方向排列方式*/
