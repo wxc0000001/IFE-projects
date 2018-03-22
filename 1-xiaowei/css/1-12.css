@@ -30,9 +30,11 @@ div ul li{
 	width: 20px;
 	height: 20px;
 	text-align: center;
-	background-color: gray;
+	/*设置背景透明度*/
+	background: rgba(189, 197, 204, 0.5);
 	float: left;
 	margin: 2px;
+
 }
 /*动画样式*/
 input{
