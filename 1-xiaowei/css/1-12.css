@@ -2,3 +2,60 @@
 	margin: 0;
 	padding: 0;
 }
+/*表格样式*/
+.t_head{
+	background-color: black;
+	color: white;
+}
+.text_color_change{
+	color: red;
+}
+.bg_color_change{
+	background-color: gray;
+}
+/*基本样式*/
+div{
+	width: 400px;
+	height: 200px;
+	background-color: green;
+	position: relative;
+}
+div ul{
+	list-style: none;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+div ul li{
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	background-color: gray;
+	float: left;
+	margin: 2px;
+}
+/*动画样式*/
+input{
+	width: 200px;
+	height: 20px;
+	transition: width 1s; /*可加 linear 2s 延迟*/
+	-moz-transition: width 1s;
+	-webkit-transition: width 1s;
+	-o-transition: width 1s;
+}
+input:focus{ /*获取焦点样式*/
+	width: 400px;
+}
+span{
+	display: inline-block;
+	width: 100%;  /*设置结束后的样式，避免还原*/
+	height: 100%;
+	animation: bg_change 2s;
+	/*animation: myfirst 5s linear 2s infinite alternate;*/
+	background-color: blue
+}
+@keyframes bg_change{
+	0% {width: 0%;}
+	/*50% {width: 50%;}*/
+	100% {width: 100%;}
+}
