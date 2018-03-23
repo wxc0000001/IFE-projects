@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2-2</title>
+</head>
+<body>
+	<h3>污染城市列表</h3>
+	<ol id="aqi-list">
+	<!-- <li>第一名：福州（样例），10</li> -->
+	</ol>
+	<script type="text/javascript">
+		var aqiData = [
+		  ["北京", 90],
+		  ["上海", 50],
+		  ["福州", 10],
+		  ["广州", 70],
+		  ["成都", 90],
+		  ["西安", 100]
+		];
+		var list = document.getElementById('aqi-list');
+		// 排序算法
+		var temp_a,temp_b;
+		for (var j = 0; j < aqiData.length-1; j++) {
+			// 特别注意判断条件（减去已经排序次数） aqiData.length-1-j 
+			for (var i = 0; i < aqiData.length-1-j; i++) {
+				if(aqiData[i+1][1] > aqiData[i][1]){
+					temp_a = aqiData[i][0];
+					temp_b = aqiData[i][1];
+					aqiData[i][0] = aqiData[i+1][0];
+					aqiData[i][1] = aqiData[i+1][1];
+					aqiData[i+1][0] = temp_a;
+					aqiData[i+1][1] = temp_b;
+				}
+			}
+		}
+		// 添加列表
+		for (var i = 0; i < aqiData.length; i++) {
+			if (aqiData[i][1] > 60) {
+				// 新建并追加li
+				var new_li = document.createElement('li'); //create单词不要写错
+				new_li.innerHTML = aqiData[i][0] + "，" + aqiData[i][1];
+				list.appendChild(new_li);
+			}
+		}
+	</script>
+</body>
+</html>
