@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2-5</title>
+	<style type="text/css">
+		ul{list-style: none;}
+		/*将li设置为inline-block，去掉float可以底部对齐排列*/
+		ul li{width: 30px; background-color: red; margin: 10px; cursor: pointer; display: inline-block;}
+	</style>
+</head>
+<body>
+	<input type="text" id="num">
+	<button id="left_in">左侧入</button>
+	<button id="right_in">右侧入</button>
+	<button id="left_out">左侧出</button>
+	<button id="right_out">右侧出</button>
+	<ul id="list"></ul>
+	<button id="l_resort">正向排序</button>
+	<button id="r_resort">反向排序</button>
+	<script type="text/javascript">
+		// 获取节点
+		var num = document.getElementById('num');
+		var left_in = document.getElementById('left_in');
+		var right_in = document.getElementById('right_in');
+		var left_out = document.getElementById('left_out');
+		var right_out = document.getElementById('right_out');
+		var l_resort = document.getElementById('l_resort');
+		var r_resort = document.getElementById('r_resort');
+		var list = document.getElementById('list');
+		var li_num = 0; //添加的li总个数
+		// 绑定按钮事件
+		function create_new_li(){
+			var new_li = document.createElement('li');
+			li_num++;
+			new_li.innerHTML = num.value; //li赋值
+			new_li.style.height = num.value+"px";//parseInt(num.value) + "px";
+			// 绑定li点击删除事件
+			new_li.onclick = function(){
+				list.removeChild(this);
+				li_num--;
+			};
+			return new_li;
+		}
+		// 左侧入
+		left_in.onclick = function () {
+			if(check(num)){
+				if(li_num <= 60){
+					list.insertBefore(create_new_li(),list.childNodes[0]);			
+				}else{alert("最多添加60个！")}
+			}
+		}
+		// 右侧入
+		right_in.onclick = function () {
+			if(check(num)){
+				if(li_num <= 60){
+					list.appendChild(create_new_li());	
+				}else{alert("最多添加60个！")}
+			}
+		}
+		// 左侧出
+		left_out.onclick = function () {
+			if(check(num)){
+				if (list.childNodes.length > 0) {
+					list.removeChild(list.childNodes[0]);
+					li_num--;
+				}	
+			}
+		}
+		// 右侧出
+		right_out.onclick = function () {
+			if(check(num)){
+				if (list.childNodes.length > 0) {
+					list.removeChild(list.childNodes[list.childNodes.length-1]);
+					li_num--;
+				}	
+			}
+		}
+		//正向排序
+		l_resort.onclick = function(){
+			resort_l();
+		}
+		//反向排序
+		r_resort.onclick = function(){
+			resort_r();
+		}
+		// 检测输入大小
+		function check(num){
+			var string = num.value;
+			//	判断非空
+			if(string != null && string.trim().length !=0){
+				// 判断是非为数字
+				if(!isNaN(string)){
+					// 输入数字范围
+					if (parseInt(string)>=10 && parseInt(string)<=100) {
+						return true;
+						// console.log(parseInt(string));
+					}else{
+						alert('请输入10-100内的数字！');
+					}
+				}else{
+					alert('请输入10-100内的数字！');
+				}
+			}
+			else{
+				alert('请输入10-100内的数字！');
+			}
+		}
+		//正向排序
+		function resort_l(){
+			var li = document.getElementsByTagName('li');
+			if (li.length < 2) {
+				alert("请至少输入两个数字！");
+			}else{
+				for (var i = 0; i < li.length-1; i++) {
+					for (var j = 0; j < li.length-i-1; j++) {
+						if (parseInt(li[j].innerText) < parseInt(li[j+1].innerText)) {
+							var temp = parseInt(li[j].innerText);
+							li[j].innerText = li[j+1].innerText;
+							li[j].style.height = parseInt(li[j+1].innerText) + "px";
+							li[j+1].innerText = temp;
+							li[j+1].style.height = temp + "px";
+	 					}
+					}
+				}
+			}
+		}
+		//反向排序
+		function resort_r(){
+			var li = document.getElementsByTagName('li');
+			if (li.length < 2) {
+				alert("请至少输入两个数字！");
+			}else{
+				for (var i = 0; i < li.length-1; i++) {
+					for (var j = 0; j < li.length-i-1; j++) {
+						if (parseInt(li[j].innerText) > parseInt(li[j+1].innerText)) {
+							var temp = parseInt(li[j].innerText);
+							li[j].innerText = li[j+1].innerText;
+							li[j].style.height = parseInt(li[j+1].innerText) + "px";
+							li[j+1].innerText = temp;
+							li[j+1].style.height = temp + "px";
+	 					}
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>
