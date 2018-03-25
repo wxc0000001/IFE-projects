@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-1</title>
+	<link rel="stylesheet" href="css/3-1.css">
+</head>
+<body>
+	<div>
+		<span>名称</span>
+		<input type="text" id="name">
+		<button id="check">验证</button>
+		<p id="hint">必填，长度为4～16个字符</p>
+	</div>
+
+	<script type="text/javascript">
+		var check = document.getElementById('check');
+		var hint = document.getElementById('hint');
+		// 验证按钮点击事件
+		check.onclick = function(){
+			var name = document.getElementById('name');
+			var str_length = cal_str_length(name.value);
+			// console.log(name.value);
+			if (name.value==null||name.value=='') {
+				name.style.borderColor = "red";
+				hint.innerText = "姓名不能为空";
+				hint.style.color = 'red';
+			}else if(str_length >= 4 && str_length <= 16){
+				name.style.borderColor = "#80ff00";
+				hint.innerText = "名称格式正确";
+				hint.style.color = '#80ff00';
+			}else{
+				name.style.borderColor = "red";
+				hint.innerText = "请输入长度为4～16的字符";
+				hint.style.color = 'red';
+			}
+		};
+		// 计算字符串长度
+		function cal_str_length(str) {
+		    ///<summary>获得字符串实际长度，中文2，英文1</summary>
+		    ///<param name="str">要获得长度的字符串</param>
+		    var realLength = 0, len = str.length, charCode = -1;
+		    for (var i = 0; i < len; i++) {
+		        charCode = str.charCodeAt(i);
+		        if (charCode >= 0 && charCode <= 128) realLength += 1;
+		        else realLength += 2;
+		    }
+		    return realLength;
+		};
+	</script>
+</body>
+</html>
