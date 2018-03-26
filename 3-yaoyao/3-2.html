@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-2</title>
+	<link rel="stylesheet" href="css/3-2.css">
+</head>
+<body>
+	<div class="info">
+		<span>名称</span><input type="text" id="name"><p id="name_p"></p>
+		<span>密码</span><input type="password" id="pw"><p id="pw_p"></p>
+		<span>密码确认</span><input type="password" id="pw_confirm"><p id="pw_confirm_p"></p>
+		<span>邮箱</span><input type="text" id="email"><p id="email_p"></p>
+		<span>手机</span><input type="text" id="mobile"><p id="mobile_p"></p>
+		<button id="submit">提交</button>
+	</div>
+
+	<script type="text/javascript">
+		
+		// 获取提示文字
+		var name_p = document.getElementById('name_p');
+		var pw_p = document.getElementById('pw_p');
+		var pw_confirm_p = document.getElementById('pw_confirm_p');
+		var email_p = document.getElementById('email_p');
+		var mobile_p = document.getElementById('mobile_p');
+
+		var submit = document.getElementById('submit');
+		
+		var complete = new Array(5); //全部完成
+		for (var i = 0; i < complete.length; i++) {
+			complete[i] = false;
+		}
+		//绑定事件
+		window.onload = function(){
+			window.addEventListener("focus",function(e){
+				var ele;
+				// 兼容IE
+				e = e||window.event;
+				if(e.target.nodeName === "INPUT"){
+					ele = e.target; //获取焦点元素
+					switch(ele.id) {
+						case "name":
+							name_p.innerText = "请输入长度为4～16的字符";
+							name_p.style.color = '#B8C1BF';
+							break;
+						case "pw":
+							pw_p.innerText = "请输入6位以上密码";
+							pw_p.style.color = '#B8C1BF';
+							break;
+						case "pw_confirm":
+							pw_confirm_p.innerText = "请再次输入相同密码";
+							pw_confirm_p.style.color = '#B8C1BF';
+							break;
+						case "email":
+							email_p.innerText = "请输入邮箱";
+							email_p.style.color = '#B8C1BF';
+							break;
+						case "mobile":
+							mobile_p.innerText = "请输入手机号码";
+							mobile_p.style.color = '#B8C1BF';
+							break;
+						default:
+							break;
+					}
+				}
+			}, true);
+			window.addEventListener("blur",function(e){
+				var ele, str_length;
+				// 兼容IE
+				e = e||window.event;
+				if(e.target.nodeName === "INPUT"){
+					ele = e.target; //获取焦点元素
+					switch(ele.id) {
+						case "name":
+							str_length = cal_str_length(ele.value);
+							if (ele.value===null||ele.value==='') {
+								ele.style.borderColor = "red";
+								name_p.innerText = "名称不能为空";
+								name_p.style.color = 'red';
+								complete[0] = false;
+							}else if(str_length >= 4 && str_length <= 16){
+								ele.style.borderColor = "#66CA07";
+								name_p.innerText = "名称格式正确";
+								name_p.style.color = '#66CA07';
+								complete[0] = true;
+							}else{
+								ele.style.borderColor = "red";
+								name_p.innerText = "请输入长度为4～16的字符";
+								name_p.style.color = 'red';
+								complete[0] = false;
+							}
+							break;
+						case "pw":
+							str_length = cal_str_length(ele.value);
+							if (ele.value===null||ele.value==='') {
+								ele.style.borderColor = "red";
+								pw_p.innerText = "密码不能为空";
+								pw_p.style.color = 'red';
+								complete[1] = false;
+							}else if(str_length >= 6){
+								ele.style.borderColor = "#66CA07";
+								pw_p.innerText = "密码可用";
+								pw_p.style.color = '#66CA07';
+								complete[1] = true;
+							}else{
+								ele.style.borderColor = "red";
+								pw_p.innerText = "请输入6位以上密码";
+								pw_p.style.color = 'red';
+								complete[1] = false;
+							}
+							break;
+						case "pw_confirm":
+							var pw = document.getElementById('pw');
+							// console.log(ele.value==pw.value);
+							if (ele.value===null||ele.value==='') {
+								ele.style.borderColor = "red";
+								pw_confirm_p.innerText = "密码不能为空";
+								pw_confirm_p.style.color = 'red';
+								complete[2] = false;
+							}else if(pw.value === ele.value){
+								ele.style.borderColor = "#66CA07";
+								pw_confirm_p.innerText = "密码输入一致";
+								pw_confirm_p.style.color = '#66CA07';
+								complete[2] = true;
+							}else{
+								ele.style.borderColor = "red";
+								pw_confirm_p.innerText = "请再次输入相同密码";
+								pw_confirm_p.style.color = 'red';
+								complete[2] = false;
+							}
+							break;
+						case "email":
+							if (ele.value===null||ele.value==='') {
+								ele.style.borderColor = "red";
+								email_p.innerText = "邮箱不能为空";
+								email_p.style.color = 'red';
+								complete[3] = false;
+							}else if(email_check(ele.value)){
+								ele.style.borderColor = "#66CA07";
+								email_p.innerText = "邮箱格式正确";
+								email_p.style.color = '#66CA07';
+								complete[3] = true;
+							}else{
+								ele.style.borderColor = "red";
+								email_p.innerText = "邮箱格式错误";
+								email_p.style.color = 'red';
+								complete[3] = false;
+							}
+							break;
+						case "mobile":
+							if (ele.value===null||ele.value==='') {
+								ele.style.borderColor = "red";
+								mobile_p.innerText = "手机不能为空";
+								mobile_p.style.color = 'red';
+								complete[4] = false;
+							}else if(mobile_check(ele.value)){
+								ele.style.borderColor = "#66CA07";
+								mobile_p.innerText = "手机格式正确";
+								mobile_p.style.color = '#66CA07';
+								complete[4] = true;
+							}else{
+								ele.style.borderColor = "red";
+								mobile_p.innerText = "手机格式错误";
+								mobile_p.style.color = 'red';
+								complete[4] = false;
+							}
+							break;
+						default:
+							break;
+					}
+				}
+			}, true);
+		}
+		//绑定按钮事件
+		submit.onclick = function () {
+			//获取输入框
+			var name = document.getElementById('name');
+			var pw = document.getElementById('pw');
+			var pw_confirm = document.getElementById('pw_confirm');
+			var email = document.getElementById('email');
+			var mobile = document.getElementById('mobile');
+
+			var corr_num = 0;
+
+			name.focus();
+			name.blur();
+			pw.focus();
+			pw.blur();
+			pw_confirm.focus();
+			pw_confirm.blur();
+			email.focus();
+			email.blur();
+			mobile.focus();
+			mobile.blur();
+			console.log(complete);
+			for (var i = 0; i < complete.length; i++) {
+				if(complete[i] === true){
+					corr_num++;
+				}
+			}
+			if(corr_num === 5){
+				alert("提交成功！");
+				window.location.reload();
+			}else{alert("提交失败！")}
+		}
+
+		// 计算字符串长度
+		function cal_str_length(str) {
+		    ///<summary>获得字符串实际长度，中文2，英文1</summary>
+		    ///<param name="str">要获得长度的字符串</param>
+		    var realLength = 0, len = str.length, charCode = -1;
+		    for (var i = 0; i < len; i++) {
+		        charCode = str.charCodeAt(i);
+		        if (charCode >= 0 && charCode <= 128) realLength += 1;
+		        else realLength += 2;
+		    }
+		    return realLength;
+		};
+		//判断邮箱格式
+		function email_check(str) {
+			var rule = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+\.){1,63}[a-z0-9]+$/;
+			if (rule.test(str))	{
+				return true;
+			}else{return false;} 
+		}
+		//判断手机格式
+		function mobile_check(str) {
+			var rule = /^((1[3-8][0-9])+\d{8})$/;
+			if (rule.test(str))	{
+				return true;
+			}else{return false;} 
+		}
+	</script>
+</body>
+</html>

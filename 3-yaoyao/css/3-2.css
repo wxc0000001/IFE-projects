@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.info{
+	width: 500px;
+	margin: 10px auto;
+	border: 1px solid red;
+	text-align: right;
+}
+input{
+	width: 350px;
+	height: 40px;
+	border: 1px solid #B8C1BF;
+	border-radius: 5px;
+	margin: 20px 20px 5px 20px;
+	font-size: 16px;
+	/*outline: medium;*/
+	padding-left: 10px;
+}
+p{
+	width: 350px;
+	text-align: left;
+	margin-left: 120px;
+	color: #B8C1BF;
+}
+#submit{
+	width: 100px;
+	height: 50px;
+	background-color: #3C42BE;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #fff;
+	margin: 20px;
+}
