@@ -9,25 +9,25 @@
 	</style>
 </head>
 <body>
-	<div class="level1">
-		<div class="level2">
-			<div class="level3">
-				<div class="level4">1</div>
-				<div class="level4">2</div>
+	<div id="1" class="level1">
+		<div id="2" class="level2">
+			<div id="4" class="level3">
+				<div id="8" class="level4">1</div>
+				<div id="9" class="level4">2</div>
 			</div>
-			<div class="level3">
-				<div class="level4"></div>
-				<div class="level4"></div>
+			<div id="5" class="level3">
+				<div id="10" class="level4"></div>
+				<div id="11" class="level4"></div>
 			</div>
 		</div>
-		<div class="level2">
-			<div class="level3">
-				<div class="level4"></div>
-				<div class="level4"></div>
+		<div id="3" class="level2">
+			<div id="6" class="level3">
+				<div id="12" class="level4"></div>
+				<div id="13" class="level4"></div>
 			</div>
-			<div class="level3">
-				<div class="level4"></div>
-				<div class="level4"></div>
+			<div id="7" class="level3">
+				<div id="14" class="level4"></div>
+				<div id="15" class="level4"></div>
 			</div>
 		</div>
 	</div>
@@ -48,6 +48,79 @@
 		e_Traverse.onclick = function (){
 			
 		}
+
+		function Node(data) {
+		    this.data = data;
+		    this.parent = null;
+		    this.children = [];
+		}
+		function Tree(data) {
+		    var node = new Node(data);
+		    this._root = node;
+		}
+		// 深度优先
+		Tree.prototype.traverseDF = function(callback) {
+		 
+		    // this is a recurse and immediately-invoking function 
+		    (function recurse(currentNode) {
+		        // step 2
+		        for (var i = 0, length = currentNode.children.length; i < length; i++) {
+		            // step 3
+		            recurse(currentNode.children[i]);
+		        }
+		 
+		        // step 4
+		        callback(currentNode);
+		         
+		        // step 1
+		    })(this._root);
+		 
+		};
+		// 广度优先
+		Tree.prototype.traverseBF = function(callback) {
+		    var queue = new Queue();
+		     
+		    queue.enqueue(this._root);
+		 
+		    currentTree = queue.dequeue();
+		 
+		    while(currentTree){
+		        for (var i = 0, length = currentTree.children.length; i < length; i++) {
+		            queue.enqueue(currentTree.children[i]);
+		        }
+		 
+		        callback(currentTree);
+		        currentTree = queue.dequeue();
+		    }
+		};
+
+		var tree = new Tree('one');
+		 
+		tree._root.children.push(new Node('two'));
+		tree._root.children[0].parent = tree;
+		 
+		tree._root.children.push(new Node('three'));
+		tree._root.children[1].parent = tree;
+		 
+		tree._root.children.push(new Node('four'));
+		tree._root.children[2].parent = tree;
+		 
+		tree._root.children[0].children.push(new Node('five'));
+		tree._root.children[0].children[0].parent = tree._root.children[0];
+		 
+		tree._root.children[0].children.push(new Node('six'));
+		tree._root.children[0].children[1].parent = tree._root.children[0];
+		 
+		tree._root.children[2].children.push(new Node('seven'));
+		tree._root.children[2].children[0].parent = tree._root.children[2];
+		// 后序遍历——深度优先
+		tree.traverseDF(function(node) {
+		    console.log(node.data)
+		});
+		// 广度优先
+		tree.traverseBF(function(node) {
+		    console.log(node.data)
+		});
 	</script>
 </body>
 </html>
