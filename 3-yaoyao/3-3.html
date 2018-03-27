@@ -6,6 +6,83 @@
 	<link rel="stylesheet" href="css/3-3.css">
 </head>
 <body>
-	
+	<div class="type">
+		<input type="radio" name="stu_type" class="radio" id="in_school"><label for="in_school">在校生</label>
+		<input type="radio" name="stu_type" class="radio" id="out_school"><label for="out_school">非在校生</label>
+	</div>
+	<div class="detail">
+		<div class="school" id="school">
+			<span>学校</span>
+			<select name="city" id="city">
+				<option value="beijing">北京</option>
+				<option value="shanghai">上海</option>
+				<option value="guangzhou">广州</option>
+				<option value="wuhan">武汉</option>
+			</select>
+			<select name="university" id="university">
+				<option value="beijing">北京大学</option>
+				<option value="beijing">清华大学</option>
+				<option value="beijing">中科院大学</option>
+			</select>
+		</div>
+		<div class="company" id="company">
+			<span>就业单位</span>
+			<input type="text" id="company_text">
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		//取元素
+		var in_school = document.getElementById('in_school');
+		var out_school = document.getElementById('out_school');
+		var school = document.getElementById('school');
+		var company = document.getElementById('company');
+		var city = document.getElementById('city');
+		
+		// 学校列表
+		var arr = [['北京大学','清华大学','中科院大学'],['交大','复旦','上财'],['中大','暨大','华农'],['武大','华科','财大']]
+		// 绑定事件
+		in_school.onchange = function () {
+			company.style.display = 'none';
+			school.style.display = 'block';
+		}
+		out_school.onchange = function () {
+			school.style.display = 'none';
+			company.style.display = 'block';
+		}
+		// 选项框关联事件
+		city.onchange = function () {
+			switch(city.value) {
+				case 'beijing':
+					changeChildNodes(0);
+					break;
+				case 'shanghai':
+					changeChildNodes(1);
+					break;
+				case 'guangzhou':
+					changeChildNodes(2);
+					break;
+				case 'wuhan':
+					changeChildNodes(3);
+					break;
+				default: 
+					break;
+			}
+		}
+		// 更新二级选项方法
+		function changeChildNodes(cityCode) {
+			var university = document.getElementById('university');
+			// 移除原有子节点
+			for (var i = university.childNodes.length-1; i >=0; i--) {
+				university.removeChild(university.lastChild);
+			}
+			// 新增子节点
+			for (var i = 0; i < arr[cityCode].length; i++) {
+				var newOption = document.createElement('option');
+				newOption.innerText = arr[cityCode][i];
+				university.append(newOption);
+			}
+		}
+	</script>
 </body>
 </html>

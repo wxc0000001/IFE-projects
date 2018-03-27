@@ -2,3 +2,42 @@
 	margin: 0;
 	padding: 0;
 }
+.type, .detail{
+	width: 500px;
+	height: 50px;
+	line-height: 50px;
+	margin: 10px auto;
+	border: 1px solid red;
+}
+.radio{
+	width: 17px;
+	height: 17px;
+	margin: 0 7px 0 120px;
+}
+#city{
+	width: 80px;
+	height: 30px;
+	background-color: #fff;
+	margin: 0 20px 0 20px;
+}
+#university{
+	width: 200px;
+	height: 30px;
+	background-color: #fff;
+}
+#company_text{
+	width: 300px;
+	height: 30px;
+	border: 1px solid #B8C1BF;
+	border-radius: 5px;
+	text-indent: 1em;
+	margin-left: 20px;
+}
+.school{
+	padding-left: 50px;
+	display: none;
+}
+.company{
+	padding-left: 20px;
+	display: none;
+}
