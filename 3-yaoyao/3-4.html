@@ -34,7 +34,6 @@
 		<div class="grid">
 			<div id="block">
 				<div id="b_head"></div>
-				<div id="b_body"></div>
 			</div>
 		</div>
 	</div>
@@ -48,6 +47,7 @@
 		var turn_r = document.getElementById('turn_r');
 		var turn_b = document.getElementById('turn_b');
 		var move_f = document.getElementById('move_f');
+		var block = document.getElementById('block');
 		var b_head = document.getElementById('b_head');
 		var status = 0; //0,1,2,3 代表 正，左，右，后
 
@@ -99,7 +99,39 @@
 					break;
 			}
 		}
-
+		//前进一步事件绑定
+		move_f.onclick = function(){
+			//获取当前top和left值
+			var top = parseInt(getStyle(block, 'top'));
+			var left = parseInt(getStyle(block, 'left'));
+			
+			switch(status) {
+				case '0':
+					if(top > 0){
+						block.style.top = top-45+'px';
+					}
+					break;
+				case '1':
+					if(left > 0){
+						block.style.left = left-45+'px';
+					}
+					break;
+				case '2':
+					if(left < 405){
+						block.style.left = left+45+'px';
+					}
+					break;
+				case '3':
+					if(top < 405){
+						block.style.top = top+45+'px';
+					}
+					break;
+			}
+		}
+		//获取style方法，不能直接.style
+		function getStyle (obj,attr) {
+		    return obj.currentStyle ? obj.currentStyle[attr]:getComputedStyle(obj)[attr];
+		}
 		//四种状态
 		// 正向
 		function forward(){
