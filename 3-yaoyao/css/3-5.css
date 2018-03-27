@@ -1,0 +1,57 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.bg{
+	width: 500px;
+	height: 500px;
+	margin: 0px auto;
+}
+.grid {
+	width: 451px;
+    height: 451px;
+    background-image:
+        /*先画黑线*/
+        linear-gradient(black 1px, transparent 0),
+        linear-gradient(90deg, black 1px, transparent 0),
+        /*再画灰线*/
+        linear-gradient(#B8B8B8, 1px, transparent 0),
+        linear-gradient(90deg, #B8B8B8 1px, transparent 0);
+    /*设置横线和竖线格子大小*/
+    background-size:  450px 450px, 450px 450px,45px 45px, 45px 45px;
+    float: left;
+}
+#row{
+	width: 450px;
+	height: 45px;
+	list-style: none;
+	margin-left: 46px;
+}
+#col{
+	width: 45px;
+	height: 450px;
+	list-style: none;
+	float: left;
+}
+ul li{
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	float: left;
+}
+#block{
+	width: 45px;
+	height: 45px;
+	position: relative;
+	top: 225px;
+	left: 225px;
+	background-color: blue;
+}
+#b_head{
+	width: 45px;
+	height: 15px;
+	background-color: red;
+	position: relative;
+	/*top: 30px;*/
+}
