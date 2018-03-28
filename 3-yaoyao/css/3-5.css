@@ -52,6 +52,20 @@ ul li{
 	width: 45px;
 	height: 15px;
 	background-color: red;
-	position: relative;
-	/*top: 30px;*/
 }
+
+@keyframes m_left{
+	0% {
+	    
+	}
+	33% {
+	}
+	67% {
+	}
+	100% {
+	}
+}
+/*//设置通用的动画CSS*/
+animation-duration: 3s;
+animation-fill-mode: forwards;
+

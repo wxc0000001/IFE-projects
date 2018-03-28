@@ -110,83 +110,83 @@
 		move_f.onclick = function(){
 			switch(status) {
 				case '0':
-					top_decrease();
+					move_ani('top', '-');
 					break;
 				case '1':
-					left_decrease();
+					move_ani('left', '-');
 					break;
 				case '2':
-					left_increase();
+					move_ani('left', '+');
 					break;
 				case '3':
-					top_increase();
+					move_ani('top', '+');
 					break;
 			}
 		}
 		move_l.onclick = function(){
 			switch(status) {
 				case '0':
-					left_decrease();
+					move_ani('left', '-');
 					break;
 				case '1':
-					top_increase();
+					move_ani('top', '+');
 					break;
 				case '2':
-					top_decrease();
+					move_ani('top', '-');
 					break;
 				case '3':
-					left_increase();
+					move_ani('left', '+');
 					break;
 			}
 		}
 		move_r.onclick = function(){
 			switch(status) {
 				case '0':
-					left_increase();
+					move_ani('left', '+');
 					break;
 				case '1':
-					top_decrease();
+					move_ani('top', '-');
 					break;
 				case '2':
-					top_increase();
+					move_ani('top', '+');
 					break;
 				case '3':
-					left_decrease();
+					move_ani('left', '-');
 					break;
 			}
 		}
 		move_b.onclick = function(){
 			switch(status) {
 				case '0':
-					top_increase();
+					move_ani('top', '+');
 					break;
 				case '1':
-					left_increase();
+					move_ani('left', '+');
 					break;
 				case '2':
-					left_decrease();
+					move_ani('left', '-');
 					break;
 				case '3':
-					top_decrease();
+					move_ani('top', '-');
 					break;
 			}
 		}
 		//转向并移动
 		Tmove_f.onclick = function(){
 			forward();
-			top_decrease();
+			move_ani('top', '-');
 		}
 		Tmove_l.onclick = function(){
 			left_();
-			left_decrease();
+			move_ani('left', '-');
 		}
 		Tmove_r.onclick = function(){
 			right();
-			left_increase();
+			move_ani('left', '+');
 		}
 		Tmove_b.onclick = function(){
 			backward();
-			top_increase();
+			move_ani('top', '+');
 		}
 		//获取style方法，不能直接.style
 		function getStyle (obj,attr) {
@@ -194,61 +194,81 @@
 		}
 		//四种状态
 		// 正向
+		var curren_rorate = 0;
+
 		function forward(){
-			b_head.style.width = '45px';
-			b_head.style.height = '15px';
-			b_head.style.top = '0';
+			block.style.transform = 'rotate(0deg)';
 			status = 0;
 		}
 		// 左向
 		function left_(){
-			b_head.style.width = '15px';
-			b_head.style.height = '45px';
-			b_head.style.float = 'left';
-			b_head.style.top = '0';
+			block.style.transform = 'rotate(270deg)';
 			status = 1;
 		}
 		// 右向
 		function right(){
-			b_head.style.width = '15px';
-			b_head.style.height = '45px';
-			b_head.style.float = 'right';
-			b_head.style.top = '0';
+			block.style.transform = 'rotate(90deg)';
 			status = 2;
 		}
 		// 反向
 		function backward(){
-			b_head.style.width = '45px';
-			b_head.style.height = '15px';
-			b_head.style.top = '30px';
+			block.style.transform = 'rotate(180deg)';
 			status = 3;
 		}	
-		// 下移
-		function top_increase(){
+		//移动动画
+		function move_ani(dir, cal){
 			var top = parseInt(getStyle(block, 'top'));
-			if(top < 405){
-				block.style.top = top+45+'px';
-			}
-		}
-		// 上移
-		function top_decrease(){
-			var top = parseInt(getStyle(block, 'top'));
-			if(top > 0){
-				block.style.top = top-45+'px';
-			}
-		}
-		// 左移
-		function left_decrease(){
-			var left = parseInt(getStyle(block, 'left'));
-			if(left > 0){
-				block.style.left = left-45+'px';
-			}
-		}
-		// 右移
-		function left_increase(){
-			var left = parseInt(getStyle(block, 'left'));
-			if(left < 405){
-				block.style.left = left+45+'px';
+			var left = parseInt(getStyle(block, 'left'));	
+			var dis = 0;
+			//下移
+			if(dir === 'top' && cal === '+'){
+				if(top < 405){
+					block.style.animationName = 'm_left';
+					// var ani = setInterval(function(){
+					// 	if(dis <= 45){
+					// 		block.style.top = top+dis+'px';
+					// 		dis++;
+					// 	}else{
+					// 		clearInterval(ani);
+					// 	}
+					// },10);
+				}
+			// 上移
+			}else if(dir === 'top' && cal === '-'){
+				if(top > 0){
+					var ani = setInterval(function(){
+						if(dis <= 45){
+							block.style.top = top-dis+'px';
+							dis++;
+						}else{
+							clearInterval(ani);
+						}
+					},10);
+				};
+			// 右移
+			}else if(dir === 'left' && cal === '+'){
+				if(left < 405){
+					var ani = setInterval(function(){
+						if(dis <= 45){
+							block.style.left = left+dis+'px';
+							dis++;
+						}else{
+							clearInterval(ani);
+						}
+					},10);
+				}
+			// 左移
+			}else if(dir === 'left' && cal === '-'){
+				if(left > 0){
+					var ani = setInterval(function(){
+						if(dis <= 45){
+							block.style.left = left-dis+'px';
+							dis++;
+						}else{
+							clearInterval(ani);
+						}
+					},10);
+				}
 			}
 		}
 	</script>
