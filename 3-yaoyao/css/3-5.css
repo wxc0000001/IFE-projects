@@ -56,17 +56,21 @@ ul li{
 
 @keyframes m_left{
 	0% {
-	    
-	}
-	33% {
-
-	}
-	67% {
-
-	}
-	100% {
-		
-	}
+	    border-radius: 0;
+	    transform: rotate(0deg);
+	  }
+	  33% {
+	    border-radius: 50%;
+	    transform: rotate(0deg);
+	  }
+	  67% {
+	    border-radius: 50%;
+	    transform: rotate(-90deg);
+	  }
+	  100% {
+	    border-radius: 0;
+	    transform: rotate(-90deg);
+	  }
 }
 /*//设置通用的动画CSS*/
 animation-duration: 3s;
