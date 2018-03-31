@@ -3,8 +3,184 @@
 <head>
 	<meta charset="UTF-8">
 	<title>3-6</title>
+	<link rel="stylesheet" href="../1-xiaowei/css/1-11.css">
+	<link rel="stylesheet" href="css/3-6.css">
 </head>
 <body>
+	<div class="wrap">
+		<div id="floatLayer">
+			<div id="floatLayer_content">
+				<button id="floatLayer_b">确定</button>
+			</div>
+		</div>
+		<!-- 顶部返回按钮+标题 -->
+		<div class="page_title">
+			<span id="layerShow">< 浮层</span>
+			<label id="noScroll">禁止滚动</label>
+		</div>
+		<!-- 导航栏 -->
+		<div class="navigator">
+			<ul>
+				<li>导航一</li>
+				<li id="nav_2">导航二</li>
+				<li>导航三</li>
+				<li>导航四</li>
+				<li>导航五</li>
+			</ul>
+		</div>
+		<img src="../1-xiaowei/imgs/1-11/banner.jpg" alt="banner" id="banner">
+		<!-- 标签栏 -->
+		<div class="col1">
+			<ul>
+				<li><img src="../1-xiaowei/imgs/1-11/label.png" alt=""><p>标签</p></li>
+				<li><img src="../1-xiaowei/imgs/1-11/label.png" alt=""><p>标签</p></li>
+				<li><img src="../1-xiaowei/imgs/1-11/label.png" alt=""><p>标签</p></li>
+				<li><img src="../1-xiaowei/imgs/1-11/label.png" alt=""><p>标签</p></li>
+				<li><img src="../1-xiaowei/imgs/1-11/label.png" alt=""><p>标签</p></li>
+			</ul>
+		</div>
+		<!-- 分栏 -->
+		<div class="col2">
+			<ul>
+				<li><img src="../1-xiaowei/imgs/1-11/image.png" alt=""><p>分栏一</p><span>分栏小标题</span></li>
+				<li id="col2_2"><img src="../1-xiaowei/imgs/1-11/image.png" alt=""><p>分栏二</p><span>分栏小标题</span></li>
+				<li><img src="../1-xiaowei/imgs/1-11/image.png" alt=""><p>分栏三</p><span>分栏小标题</span></li>
+			</ul>
+		</div>
+		<!-- 模块一 -->
+		<div class="module">
+			<span>模块一</span>
+			<table>
+				<tr>
+					<td rowspan="2">
+						<img src="../1-xiaowei/imgs/1-11/image.png" alt="">
+					</td>
+					<td><p>这是文案</p></td>
+					<td><p>这是文案</p></td>
+				</tr>
+				<tr>
+					<td><p>这是文案</p></td>
+					<td><p>这是文案</p></td>
+				</tr>
+				<tr>
+					<td rowspan="2">
+						<img src="../1-xiaowei/imgs/1-11/image.png" alt="">
+					</td>
+					<td><p>这是文案</p></td>
+					<td><p>这是文案</p></td>
+				</tr>
+				<tr>
+					<td><p>这是文案</p></td>
+					<td><p>这是文案</p></td>
+				</tr>
+			</table>
+		</div>
+		<!-- 模块二 -->
+		<div class="module">
+			<span>模块二</span>
+			<table>
+				<tr>
+					<td rowspan="2">
+						<img src="../1-xiaowei/imgs/1-11/image.png" alt="">
+					</td>
+					<td><p>这是文案</p></td>
+					<td><p>这是文案</p></td>
+				</tr>
+				<tr>
+					<td><p>这是文案</p></td>
+					<td><p>这是文案</p></td>
+				</tr>
+				<tr>
+					<td rowspan="2">
+						<img src="../1-xiaowei/imgs/1-11/image.png" alt="">
+					</td>
+					<td><p>这是文案</p></td>
+					<td><p>这是文案</p></td>
+				</tr>
+				<tr>
+					<td><p>这是文案</p></td>
+					<td><p>这是文案</p></td>
+				</tr>
+			</table>
+		</div>
+		<!-- 文章模块 -->
+		<div class="article">
+			<div class="article_row">
+				<img src="../1-xiaowei/imgs/1-11/image.png" alt="">
+				<p>这是文章标题</p>
+				<span>文章来源 6分钟前</span>
+			</div>
+			<div class="article_row">
+				<img src="../1-xiaowei/imgs/1-11/image.png" alt="">
+				<p>这是文章标题</p>
+				<span>文章来源 6分钟前</span>
+			</div>
+			<div class="article_row2">
+				<p>这是文章标题</p>
+				<ul>
+					<li><img src="../1-xiaowei/imgs/1-11/image.png" alt=""></li>
+					<li><img src="../1-xiaowei/imgs/1-11/image.png" alt=""></li>
+					<li><img src="../1-xiaowei/imgs/1-11/image.png" alt=""></li>
+				</ul>
+				<span>文章来源 6分钟前</span>
+			</div>
+		</div>
+	</div>
 	
+	<script type="text/javascript">
+		var layerShow = document.getElementById('layerShow');
+		var floatLayer = document.getElementById('floatLayer');
+		var floatLayer_content = document.getElementById('floatLayer_content');
+		var floatLayer_b = document.getElementById('floatLayer_b');
+		var noScroll = document.getElementById('noScroll');
+		// var currW = document.body.clientWidth;  //获取body的高度
+		var currH;
+		
+		layerShow.onclick = function(){
+			currH = document.documentElement.clientHeight;//获取可见高度
+			floatLayer.style.display = 'block';
+			floatLayer_content.style.margin = Math.round((currH-400)/2) + 'px auto';
+		}
+		
+		floatLayer_content.onclick = function(e){
+			floatLayer.style.display = 'block';
+			stopBubble(e);
+		}
+		floatLayer.onclick = function(){
+			floatLayer.style.display = 'none';
+		}
+		floatLayer_b.onclick = function(e){
+			floatLayer.style.display = 'none';
+			stopBubble(e);
+		}
+		// 是否允许页面滚动
+		var scroll_bool = true;
+		noScroll.onclick = function(){
+			if(scroll_bool){
+				noScroll.innerText = '允许滚动';
+				document.body.style.overflow = 'hidden';
+				scroll_bool = false;
+			}else{
+				noScroll.innerText = '禁止滚动';
+				document.body.style.overflow = '';
+				scroll_bool = true;
+			}
+		}
+		//调整窗口时浮层大小跟着改变
+		window.onresize = function(){
+			currH = document.documentElement.clientHeight;//重新获取可见高度
+			floatLayer_content.style.margin = Math.round((currH-400)/2) + 'px auto';
+		}
+		//阻止事件冒泡
+		function stopBubble(e) {
+        //如果提供了事件对象，则这是一个非IE浏览器
+        if ( e && e.stopPropagation )
+            //因此它支持W3C的stopPropagation()方法
+            e.stopPropagation();
+        else
+            //否则，我们需要使用IE的方式来取消事件冒泡
+            window.event.cancelBubble = true;
+    	}
+	</script>
 </body>
 </html>
