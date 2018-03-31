@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-7Table</title>
+	<style type="text/css">
+		#autoTable{
+			/*width: 300px;*/
+			/*height: 300px;*/
+			border: 1px solid #BEC9C1;
+			margin: 0 auto;
+			border-collapse: collapse;
+			text-align: center;
+		}
+		#autoTable tr:first-child{
+			background-color: #7D827C;
+			color: #fff;
+		}
+		#autoTable td{
+			width: 100px;
+			height: 50px;
+			border: 1px solid #BEC9C1;
+		}
+
+		/*----------三角形的画法-----------*/
+		
+		span{
+			width: 0px;
+			height: 0px;
+			position: relative;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+		}
+		/* 上 */
+		.san_shang {
+			border-bottom: 10px solid #fff;
+			top: -20px;
+			left: 20px;
+		}
+		/* 下 */
+		.san_xia {
+		    border-top: 10px solid #fff;
+			top: 30px;
+			left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<table id="autoTable"></table>
+	<script type="text/javascript">
+		// 表格数据
+		var THead = ['姓名','语文','数学','英语','总分'];
+		var TBody = [
+		['小明', 80, 90, 70, 240],
+		['小红', 90, 60, 90, 240],
+		['小亮', 60, 100, 70, 230],
+		];
+
+		var autoTable = document.getElementById('autoTable');
+
+		// 创建表格
+		function createTable(){
+			// 定义新数组
+			var mydata = new Array();
+			for (var i = 0; i < 1+TBody.length; i++) {
+				mydata[i] = new Array();
+			}
+			// 拼接两个数组
+			mydata[0] = THead;
+			for (var i = TBody.length; i > 0; i--) {
+				mydata[i] = TBody[i-1];
+			}
+			// 先清空表格防止重叠
+			removeChlidNodes(autoTable);
+			for (var i = 0; i < mydata.length; i++) {
+				// 新建行tr
+				var newTr = document.createElement('tr');
+				for (var j = 0; j < mydata[0].length; j++) {
+					// 新建单元格td
+					var newTd = document.createElement('td');
+					newTd.innerText = mydata[i][j];
+					// 添加排序符号
+					if(i === 0 && j !== 0){
+						var sortUp = document.createElement('span');
+						var sortDown = document.createElement('span');
+						// 升序排列
+						sortUp.className = 'san_shang';
+						sortUp.onclick = function(){
+							sortUp_f(this);
+						};
+						// 降序排列
+						sortDown.className = 'san_xia';
+						sortDown.onclick = function(){
+							sortDown_f(this);
+						};
+						// 添加到单元格中
+						newTd.append(sortUp);
+						newTd.append(sortDown);
+					}
+					// 添加到行
+					newTr.append(newTd);
+				}
+				// 添加到表格
+				autoTable.append(newTr);
+			}
+		}
+		var val=1;//默认排序
+		// 升序排列
+		function sortUp_f(obj){
+			val = obj.parentNode.cellIndex;
+			TBody.sort(function sortNumber(a,b)
+			{	
+				return a[val] - b[val];
+			});
+			createTable();
+		}
+		// 降序排列
+		function sortDown_f(obj){
+			val = obj.parentNode.cellIndex;
+			TBody.sort(function sortNumber(a,b)
+			{	
+				return b[val] - a[val];
+			});
+			createTable();
+		}
+		// 清空表格
+		function removeChlidNodes(obj){
+			var num = obj.childNodes.length;
+			if(num!==0){
+				for(var i=0;i<num;i++) {
+				    obj.removeChild(obj.firstChild);
+				}
+			}
+		}
+		
+		// 初始加载
+		window.onload = function(){
+			createTable();
+		}
+	</script>
+</body>
+</html>
