@@ -5,8 +5,6 @@
 	<title>3-7Table</title>
 	<style type="text/css">
 		#autoTable{
-			/*width: 300px;*/
-			/*height: 300px;*/
 			border: 1px solid #BEC9C1;
 			margin: 0 auto;
 			border-collapse: collapse;
@@ -48,30 +46,27 @@
 <body>
 	<table id="autoTable"></table>
 	<script type="text/javascript">
+		var autoTable = document.getElementById('autoTable');
 		// 表格数据
 		var THead = ['姓名','语文','数学','英语','总分'];
-		var TBody = [
-		['小明', 80, 90, 70, 240],
-		['小红', 90, 60, 90, 240],
-		['小亮', 60, 100, 70, 230],
-		];
+		var TBody = [ ['小明', 80, 90, 70, 240],
+					['小红', 90, 60, 90, 240],
+					['小亮', 60, 100, 70, 230]];
+		// 定义一个新的二维数组存放拼接结果
+		var mydata = new Array();
+		for (var i = 0; i < 1+TBody.length; i++) {
+			mydata[i] = new Array();
+		}
+		//默认排序规则
+		var val=1;
 
-		var autoTable = document.getElementById('autoTable');
-
+		
 		// 创建表格
 		function createTable(){
-			// 定义新数组
-			var mydata = new Array();
-			for (var i = 0; i < 1+TBody.length; i++) {
-				mydata[i] = new Array();
-			}
-			// 拼接两个数组
-			mydata[0] = THead;
-			for (var i = TBody.length; i > 0; i--) {
-				mydata[i] = TBody[i-1];
-			}
-			// 先清空表格防止重叠
+			//拼接数据，清空原有表格防止重叠
+			join();
 			removeChlidNodes(autoTable);
+
 			for (var i = 0; i < mydata.length; i++) {
 				// 新建行tr
 				var newTr = document.createElement('tr');
@@ -86,12 +81,14 @@
 						// 升序排列
 						sortUp.className = 'san_shang';
 						sortUp.onclick = function(){
-							sortUp_f(this);
+							val = this.parentNode.cellIndex;
+							sortUp_f(val);
 						};
 						// 降序排列
 						sortDown.className = 'san_xia';
 						sortDown.onclick = function(){
-							sortDown_f(this);
+							val = this.parentNode.cellIndex;
+							sortDown_f(val);
 						};
 						// 添加到单元格中
 						newTd.append(sortUp);
@@ -104,10 +101,9 @@
 				autoTable.append(newTr);
 			}
 		}
-		var val=1;//默认排序
+		
 		// 升序排列
-		function sortUp_f(obj){
-			val = obj.parentNode.cellIndex;
+		function sortUp_f(val){
 			TBody.sort(function sortNumber(a,b)
 			{	
 				return a[val] - b[val];
@@ -115,14 +111,14 @@
 			createTable();
 		}
 		// 降序排列
-		function sortDown_f(obj){
-			val = obj.parentNode.cellIndex;
+		function sortDown_f(val){
 			TBody.sort(function sortNumber(a,b)
 			{	
 				return b[val] - a[val];
 			});
 			createTable();
 		}
+
 		// 清空表格
 		function removeChlidNodes(obj){
 			var num = obj.childNodes.length;
@@ -132,10 +128,18 @@
 				}
 			}
 		}
+
+		// 拼接两个数组
+		function join(){
+			mydata[0] = THead;
+			for (var i = TBody.length; i > 0; i--) {
+				mydata[i] = TBody[i-1];
+			}
+		}
 		
 		// 初始加载
 		window.onload = function(){
-			createTable();
+			sortUp_f(val);
 		}
 	</script>
 </body>
