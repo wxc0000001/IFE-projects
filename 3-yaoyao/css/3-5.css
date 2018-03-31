@@ -54,25 +54,63 @@ ul li{
 	background-color: red;
 }
 
-@keyframes m_left{
+@keyframes left0_1{
 	0% {
 		border-radius: 0;
 		transform: rotate(0deg);
-	}
-	33% {
-		border-radius: 50%;
-		transform: rotate(0deg);
-	}
-	67% {
-		border-radius: 50%;
-		transform: rotate(-90deg);
 	}
 	100% {
 		border-radius: 0;
 		transform: rotate(-90deg);
 	}
 }
-/*//设置通用的动画CSS*/
-animation-duration: 3s;
-animation-fill-mode: forwards;
-
+@keyframes left2_1{
+	0% {
+		border-radius: 0;
+		transform: rotate(90deg);
+	}
+	100% {
+		border-radius: 0;
+		transform: rotate(-90deg);
+	}
+}
+@keyframes left3_1{
+	0% {
+		border-radius: 0;
+		transform: rotate(180deg);
+	}
+	100% {
+		border-radius: 0;
+		transform: rotate(270deg);
+	}
+}
+@keyframes left0_2{
+	0% {
+		border-radius: 0;
+		transform: rotate(0deg);
+	}
+	100% {
+		border-radius: 0;
+		transform: rotate(90deg);
+	}
+}
+@keyframes left1_2{
+	0% {
+		border-radius: 0;
+		transform: rotate(-90deg);
+	}
+	100% {
+		border-radius: 0;
+		transform: rotate(90deg);
+	}
+}
+@keyframes left3_2{
+	0% {
+		border-radius: 0;
+		transform: rotate(180deg);
+	}
+	100% {
+		border-radius: 0;
+		transform: rotate(90deg);
+	}
+}

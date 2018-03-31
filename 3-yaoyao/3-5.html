@@ -172,9 +172,20 @@
 			}
 		}
 		//转向并移动
+		var flag = false;//判断是否正在运行移动效果
+		var m;//定时器
+
 		Tmove_f.onclick = function(){
 			forward();
-			move_ani('top', '-');
+			//防止多次连续点击冲突，完成部分
+			if(!flag){
+				flag = true;
+				move_ani('top', '-');
+			}
+			clearTimeout(m);
+			m = setTimeout(function(){
+				flag = false;
+			},450);
 		}
 		Tmove_l.onclick = function(){
 			left_();
@@ -194,8 +205,6 @@
 		}
 		//四种状态
 		// 正向
-		var curren_rorate = 0;
-
 		function forward(){
 			block.style.transform = 'rotate(0deg)';
 			status = 0;
@@ -203,11 +212,35 @@
 		// 左向
 		function left_(){
 			block.style.transform = 'rotate(270deg)';
+			//转向动画，完成部分
+			switch(status) {
+				case '0':
+					block.style.animation = 'left0_1 1s';
+					break;
+				case '2':
+					block.style.animation = 'left2_1 1s';
+					break;
+				case '3':
+					block.style.animation = 'left3_1 1s';
+					break;
+			}
 			status = 1;
 		}
 		// 右向
 		function right(){
 			block.style.transform = 'rotate(90deg)';
+			//转向动画，完成部分
+			switch(status) {
+				case '0':
+					block.style.animation = 'left0_2 1s';
+					break;
+				case '1':
+					block.style.animation = 'left1_2 1s';
+					break;
+				case '3':
+					block.style.animation = 'left3_2 1s';
+					break;
+			}
 			status = 2;
 		}
 		// 反向
@@ -220,23 +253,23 @@
 			var top = parseInt(getStyle(block, 'top'));
 			var left = parseInt(getStyle(block, 'left'));	
 			var dis = 0;
+			var ani;
 			//下移
 			if(dir === 'top' && cal === '+'){
 				if(top < 405){
-					block.style.animation = 'm_left 3s';
-					// var ani = setInterval(function(){
-					// 	if(dis <= 45){
-					// 		block.style.top = top+dis+'px';
-					// 		dis++;
-					// 	}else{
-					// 		clearInterval(ani);
-					// 	}
-					// },10);
+					ani = setInterval(function(){
+						if(dis <= 45){
+							block.style.top = top+dis+'px';
+							dis++;
+						}else{
+							clearInterval(ani);
+						}
+					},10);
 				}
 			// 上移
 			}else if(dir === 'top' && cal === '-'){
 				if(top > 0){
-					var ani = setInterval(function(){
+					ani = setInterval(function(){
 						if(dis <= 45){
 							block.style.top = top-dis+'px';
 							dis++;
@@ -248,7 +281,7 @@
 			// 右移
 			}else if(dir === 'left' && cal === '+'){
 				if(left < 405){
-					var ani = setInterval(function(){
+					ani = setInterval(function(){
 						if(dis <= 45){
 							block.style.left = left+dis+'px';
 							dis++;
@@ -260,7 +293,7 @@
 			// 左移
 			}else if(dir === 'left' && cal === '-'){
 				if(left > 0){
-					var ani = setInterval(function(){
+					ani = setInterval(function(){
 						if(dis <= 45){
 							block.style.left = left-dis+'px';
 							dis++;
