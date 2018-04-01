@@ -72,10 +72,6 @@
   left:50%;
   box-sizing: border-box;
 }
-/*#signUp:hover{
-	cursor: pointer;
-	color: red;
-}*/
 
 @keyframes blur_in{
 	0%{
