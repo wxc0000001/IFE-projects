@@ -1,0 +1,116 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#wrap{
+	width: 500px;
+	height: 300px;
+	margin: 0 auto;
+
+}
+#bg_pic{
+	width: 500px;
+	height: 300px;
+	float: left;
+	/*透明度和高斯模糊*/
+	/*opacity: 0.5;*/
+	/*filter: blur(5px);*/
+}
+#floatLayer{
+	width: 300px;
+	height: 200px;
+	position: relative;
+	top: 50px;
+	left: 100px;
+	border: 2px solid #fff;
+	font-size: 20px;
+	/*display: none;*/
+}
+#welcome{
+	position: absolute;
+	top: 50px;
+	left: 30px;	
+	/*设置一个两倍长的彩色背景，显示其中50%，位移另50%实现闪烁*/
+	/*例：红，绿，红，绿，红， 显示前三个颜色，防止闪烁动画时出现明显的颜色分界*/
+	background-image: -webkit-linear-gradient(left,#D81159 0%, #30A9DE 30%,#D81159 50%, #30A9DE 80%, #D81159 100%);
+	/*全彩背景*/
+	/*background-image: -webkit-linear-gradient(left,#D81159, #E53A40 10%, #FFBC42 20%, #75D701 30%, #30A9DE 40%,#D81159 50%, #E53A40 60%, #FFBC42 70%, #75D701 80%, #30A9DE 90%,#D81159);*/  
+	color:transparent;
+  	-webkit-background-clip: text;
+	/*两倍长背景*/
+	background-size: 200% 100%;
+	animation: flowlight 5s linear infinite;
+}
+#signUp{
+	position: absolute;
+	top: 120px;
+	left: 110px;
+	color: green;
+	animation: colorchange 5s linear infinite;
+}
+#floatLayer::before {
+  content:'';
+  border:3px solid #fff;
+  border-width: 0 3px;
+  position: absolute;
+  width:100%;
+  height:0;
+  top:50%;
+  left:0;
+  box-sizing: border-box;
+}
+
+
+#floatLayer::after {
+  content:'';
+  border:3px solid #fff;
+  border-width: 3px 0;
+  position: absolute;
+  width:0;
+  height:100%;
+  top:0;
+  left:50%;
+  box-sizing: border-box;
+}
+/*#signUp:hover{
+	cursor: pointer;
+	color: red;
+}*/
+
+@keyframes blur_in{
+	0%{
+		filter: blur(0px);
+	}
+	100%{
+		filter: blur(5px);
+	}
+}
+@keyframes blur_out{
+	0%{
+		filter: blur(5px);
+	}
+	100%{
+		filter: blur(0px);
+	}
+}
+/*上部分文字闪烁动画*/
+@keyframes flowlight {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+/*下部分文字渐变动画*/
+@keyframes colorchange{
+	0%{
+		color: green;
+	}
+	50%{
+		color: blue;
+	}
+	100%{
+		color: green;
+	}
+}
