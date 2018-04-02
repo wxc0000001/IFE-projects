@@ -1,0 +1,146 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.bg{
+	width: 700px;
+	height: 700px;
+	margin: 0px auto;
+	background-image: url(../imgs/pic2.jpg);
+	background-size: 650px 650px;
+}
+#grid {
+	width: 651px;
+    height: 651px;
+    background-image:
+        /*先画黑线*/
+        linear-gradient(black 1px, transparent 0),
+        linear-gradient(90deg, black 1px, transparent 0),
+        /*再画灰线*/
+        linear-gradient(#B8B8B8, 1px, transparent 0),
+        linear-gradient(90deg, #B8B8B8 1px, transparent 0);
+    /*设置横线和竖线格子大小*/
+    background-size:  650px 650px, 650px 650px,25px 25px, 25px 25px;
+    float: left;
+    position: relative;
+}
+#row{
+	width: 650px;
+	height: 25px;
+	list-style: none;
+	margin-left: 26px;
+}
+#col{
+	width: 25px;
+	height: 650px;
+	list-style: none;
+	float: left;
+}
+ul li{
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	float: left;
+}
+#start{
+	width: 80px;
+	height: 50px;
+	background-color: #FD9BBB;
+	border-radius: 5px;
+	box-shadow: 0 0 2px 2px #FD9BBB;
+	border-style: none;
+	margin:10px 0 10px 46%;
+}
+#block{
+	width: 25px;
+	height: 25px;
+	position: relative;
+	/*top: 225px;
+	left: 225px;
+*/	background-color: #FD9BBB;
+}
+#b_head{
+	width: 25px;
+	height: 10px;
+	position: absolute;
+	/*top: 225px;
+	left: 225px;*/
+	background-color: #C8C9CC;
+}
+#food{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 200px;
+	left: 200px;
+	background-color: #FD9BBB;
+}
+.snakeBody{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	/*top: 225px;
+	left: 225px;
+*/	background-color: #FD9BBB;
+}
+/*@keyframes left0_1{
+	0% {
+		border-radius: 0;
+		transform: rotate(0deg);
+	}
+	100% {
+		border-radius: 0;
+		transform: rotate(-90deg);
+	}
+}
+@keyframes left2_1{
+	0% {
+		border-radius: 0;
+		transform: rotate(90deg);
+	}
+	100% {
+		border-radius: 0;
+		transform: rotate(-90deg);
+	}
+}
+@keyframes left3_1{
+	0% {
+		border-radius: 0;
+		transform: rotate(180deg);
+	}
+	100% {
+		border-radius: 0;
+		transform: rotate(270deg);
+	}
+}
+@keyframes left0_2{
+	0% {
+		border-radius: 0;
+		transform: rotate(0deg);
+	}
+	100% {
+		border-radius: 0;
+		transform: rotate(90deg);
+	}
+}
+@keyframes left1_2{
+	0% {
+		border-radius: 0;
+		transform: rotate(-90deg);
+	}
+	100% {
+		border-radius: 0;
+		transform: rotate(90deg);
+	}
+}
+@keyframes left3_2{
+	0% {
+		border-radius: 0;
+		transform: rotate(180deg);
+	}
+	100% {
+		border-radius: 0;
+		transform: rotate(90deg);
+	}
+}*/
