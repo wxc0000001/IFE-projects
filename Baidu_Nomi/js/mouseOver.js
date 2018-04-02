@@ -4,15 +4,15 @@ var floatLayer = document.getElementById('floatLayer');
 var content = document.getElementById('content');
 // 触发事件
 bg_pic.onmouseover = function(){
-	bg_pic.style.animation = 'blur_in 2s';
-	bg_pic.style.filter = 'blur(5px)';
-	content.style.animation = 'blur_in 2s';
+	// bg_pic.style.animation = 'blur_in 2s';
+	// bg_pic.style.filter = 'blur(5px)';
+	// content.style.animation = 'blur_in 2s';
 	// floatLayer.style.display = 'block';
 	
 }
 bg_pic.onmouseout = function(){
-	bg_pic.style.animation = 'blur_out 2s';
-	bg_pic.style.filter = 'blur(0px)';
+	// bg_pic.style.animation = 'blur_out 2s';
+	// bg_pic.style.filter = 'blur(0px)';
 	// floatLayer.style.display = 'none';
 }
 floatLayer.onmouseover = function(e){
