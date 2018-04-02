@@ -1,0 +1,153 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/*总包裹层，定位*/
+.wrap{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: calc(50% - 50px);
+	left: calc(50% - 50px);
+}
+/*外部旋转层*/
+.outer{
+	width: 96px;
+	height: 96px;
+	border: 2px solid #FC379A;
+	position: absolute;
+	border-radius: 50px;
+	border-top-color: transparent;
+	animation: B_rotate 1s linear infinite;
+}
+/*内部旋转部分公共属性*/
+.rotate{
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+	margin: 10px;
+	position:absolute;
+}
+/*底层左半部分*/
+.leftPart{
+	background-color: #FD7AAF;
+	animation: l_rotate 2s infinite;
+	clip: rect(0px 40px 80px 0px );
+	z-index: 3;
+}
+/*底层右半部分*/
+.rightPart{
+	background-color: #FD7AAF;
+	animation: r_rotate 2s infinite;
+	clip: rect(0px 80px 80px 40px );
+	z-index: 1;
+}
+/*旋转部分*/
+.rotatePart{
+	background-color: #FC379A;
+	animation: C_rotate 2s linear infinite;
+	clip: rect(0px 40px 80px 0px);
+	z-index: 2;
+}
+/*外层边框旋转*/
+@keyframes B_rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+/*内部旋转部分*/
+@keyframes C_rotate{
+	0%{
+		/*transform: rotate(0deg);
+		background-color: #FC379A;*/
+	}
+	50%{
+		transform: rotate(360deg);
+		background-color: #FC379A;
+	}
+	50.1%{
+		transform: rotate(360deg);
+		background-color: #FD7AAF;
+	}
+	99.9%{
+		transform: rotate(720deg);
+		background-color: #FD7AAF;
+	}
+	100%{
+		transform: rotate(720deg);
+		background-color: #FC379A;
+	}
+}
+/*底层左半部分*/
+@keyframes l_rotate{
+	0%{
+		/*z-index: 3;
+		background-color: #FD7AAF;*/
+	}
+	25%{
+		z-index: 3;
+	}
+	25.1%{
+		z-index: 1;
+	}
+	49.9%{
+		background-color: #FD7AAF;
+		z-index: 1;
+	}
+	50%{
+		background-color: #FC379A;
+		z-index: 3;
+	}
+	75%{
+		z-index: 3;
+	}
+	75.1%{
+		z-index: 1;
+	}
+	99.9%{
+		background-color: #FC379A;
+		z-index: 1;
+	}
+	100%{
+		background-color: #FD7AAF;
+		z-index: 3;
+	}
+}
+/*底层右半部分*/
+@keyframes r_rotate{
+	0%{
+		/*z-index: 1;
+		background-color: #FD7AAF;*/
+	}
+	25%{
+		background-color: #FD7AAF;
+		z-index: 1;
+	}
+	25.1%{
+		background-color: #FC379A;
+		z-index: 3;
+	}
+	49.9%{
+		z-index: 3;
+	}
+	50%{
+		z-index: 1;
+	}
+	75%{
+		background-color: #FC379A;
+		z-index: 1;
+	}
+	75.1%{
+		background-color: #FD7AAF;
+		z-index: 3;
+	}
+	99.9%{
+		z-index: 3;
+	}
+	100%{
+		z-index: 1;
+	}
+}
