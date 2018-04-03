@@ -6,35 +6,32 @@
 	<link rel="stylesheet" href="css/Game_snake.css">
 </head>
 <body>
-	 <button id="start">开始游戏</button>
-	<!-- <button id="turn_l">向左转</button>
-	<button id="turn_r">向右转</button>
-	<button id="move_f">前进一步</button> -->
+	<div class="top">
+		<span id="score">分数</span>
+		<button id="start">开始游戏</button>
+	</div>
+	<!-- 总包裹层 -->
 	<div class="bg">
+		<!-- 横纵坐标轴 -->
 		<ul id="row"></ul>
 		<ul id="col"></ul>
+		<!-- 网格区域 -->
 		<div id="grid">
-			<div id="food"></div>
-
+			<!-- 食物 -->
+			<div id="food" class="snakeBody"></div>
+			<!-- 蛇整体部分 -->
 			<div id="snakeWrap">
-				<div id="block">
-					<div id="b_head"></div>
+				<!-- 蛇头部分 -->
+				<div id="block" class="snakeBody">
+					<div id="b_head" class="snakeBody"></div>
 				</div>
 			</div>
-			
 		</div>
 	</div>
-	
-	<!-- <button id="turn_r">向前走</button>
-	<button id="turn_b">向后转</button> <br />	 -->
-	
-	<!-- <button id="move_l">左移一步</button>
-	<button id="move_r">右移一步</button>
-	<button id="move_b">后退一步</button> <br /> -->
-	<!-- <button id="Tmove_f">转向正面并前进一步</button>
-	<button id="Tmove_l">转向左边并左移一步</button>
-	<button id="Tmove_r">转向右边并右移一步</button>
-	<button id="Tmove_b">转向后面并后退一步</button> -->
+	<!-- <button class='control' id="up"><span class="san_shang"></span></button>
+	<button class='control' id="left"><span class="san_zuo"></span></button>	
+	<button class='control' id="right"><span class="san_you"></span></button>
+	<button class='control' id="down"><span class="san_xia"></span></button> -->
 
 	<script type="text/javascript" src="js/Game_snake.js"></script>
 </body>
