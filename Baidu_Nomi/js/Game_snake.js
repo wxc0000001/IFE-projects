@@ -141,7 +141,7 @@ start.onclick = function(){
 // Tright.onclick = function(){right();}
 
 /*-------------------函数处理区-------------------*/
- 
+
 // 更新食物位置
 function updateFood(){
 	var newFood_X = Math.ceil(Math.random()*25)+1;
