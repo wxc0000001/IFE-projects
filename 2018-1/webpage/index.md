@@ -31,7 +31,6 @@
 					<li>What's New</li>
 				</ul>
 			</div>
-			
 			<div class="right_nav">
 				<h4 class="nav_cato"><span>YOUR PRODUCT</span><img src="images/public/Settings.png" /></h4>
 				<ul class="right_nav_ul">
@@ -41,7 +40,6 @@
 					<li>Infographics</li>
 				</ul>
 			</div>
-			
 			<div class="right_nav right_nav_3">
 				<h4 class="nav_cato"><span>DASHBOARD</span><img src="images/public/Settings.png" /></h4>	
 				<ul class="right_nav_ul">
@@ -52,7 +50,6 @@
 					<li>App Settings</li>
 				</ul>
 			</div>
-			
 			<div id="right_nav_bottom">
 				<h4>
 					<label id="label_1">Monthly Goals</label><label id="label_2">$580/$3200</label>
@@ -68,7 +65,6 @@
 				<span id="userpic">
 					<img id="userphoto" src="images/user icon/userpic1.jpg" />
 					<span id="status"><img src="images/public/Status.png" /></span>
-					
 				</span>
 				<span id="moreinfo"><img src="images/public/dropdown.png" /></span>
 				<h3 id="username">Jordan J.</h3>
@@ -98,7 +94,6 @@
 						<span class="hint cont_hint">4</span>
 					</div>
 				</div>
-
 				<div class="userlist">
 					<div class="upinfo">
 						<span id="userpic">
@@ -112,7 +107,6 @@
 						<p>Helping you plan the instructional design Whatever product or system you’re writing documentation for, people reading it go through a ‘mental journey’ of learning, understanding, and applying that documentation You can use simple storyboarding to help you plan out your documentation according to how people learn Check that they   understand underlying concepts Explain the steps   needed to do the thing Give them a way   to check that they   did it right</p>
 					</div>
 				</div>
-
 				<div class="userlist">
 					<div class="upinfo">
 						<span id="userpic">
@@ -126,7 +120,6 @@
 						<p>Helping you plan the instructional design Whatever product or system you’re writing documentation for, people reading it go through a ‘mental journey’ of learning, understanding, and applying that documentation You can use simple storyboarding to help you plan out your documentation according to how people learn Check that they   understand underlying concepts Explain the steps   needed to do the thing Give them a way   to check that they   did it right</p>
 					</div>
 				</div>
-
 				<div class="userlist">
 					<div class="upinfo">
 						<span id="userpic">
@@ -140,7 +133,6 @@
 						<p>Helping you plan the instructional design Whatever product or system you’re writing documentation for, people reading it go through a ‘mental journey’ of learning, understanding, and applying that documentation You can use simple storyboarding to help you plan out your documentation according to how people learn Check that they   understand underlying concepts Explain the steps   needed to do the thing Give them a way   to check that they   did it right</p>
 					</div>
 				</div>
-
 				<div class="userlist">
 					<div class="upinfo">
 						<span id="userpic">
@@ -154,7 +146,6 @@
 						<p>Helping you plan the instructional design Whatever product or system you’re writing documentation for, people reading it go through a ‘mental journey’ of learning, understanding, and applying that documentation You can use simple storyboarding to help you plan out your documentation according to how people learn Check that they   understand underlying concepts Explain the steps   needed to do the thing Give them a way   to check that they   did it right</p>
 					</div>
 				</div>
-
 				<div class="userlist">
 					<div class="upinfo">
 						<span id="userpic">
@@ -168,7 +159,6 @@
 						<p>Helping you plan the instructional design Whatever product or system you’re writing documentation for, people reading it go through a ‘mental journey’ of learning, understanding, and applying that documentation You can use simple storyboarding to help you plan out your documentation according to how people learn Check that they   understand underlying concepts Explain the steps   needed to do the thing Give them a way   to check that they   did it right</p>
 					</div>
 				</div>
-
 				<div class="userlist">
 					<div class="upinfo">
 						<span id="userpic">
@@ -183,7 +173,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 <!-- 内容区右侧 -->
 		<div id="right_cont">
@@ -195,12 +184,10 @@
 						<li class="li_dec"><img id="userphoto" src="images/right cont/Upload icon.png" /></li>
 						<li><img id="userphoto" src="images/right cont/Trash icon.png" /></li>
 					</ul>
-					
 					<ul id="right_cont_page">
 						<li class="li_dec"><img id="userphoto" src="images/right cont/Arrow left.png" /></li>
 						<li><img id="userphoto" src="images/right cont/Arrow right.png" /></li>
 					</ul>
-
 					<span id="right_cont_pagenum">1 of 28</span>
 				</div>
 			</div>
@@ -216,7 +203,6 @@
 						<p>Helping you plan the instructional design Whatever product or system you’re writing documentation for, people reading it go through a ‘mental journey’ of learning, understanding, </p>
 						</div>
 					</div>
-
 					<div class="right_cont_detail">
 						<span id="userpic">
 							<img id="userphoto" src="images/user icon/userpic1.jpg" />
@@ -227,7 +213,6 @@
 						<p>Helping you plan the instructional design Whatever product or system you’re writing documentation for, people reading it go through a ‘mental journey’ of learning, understanding, and applying that documentation You can use simple storyboarding to help you plan out your documentation according to how people learn Check that </p>
 						</div>
 					</div>
-
 					<span id="Delimiter1">Tuesday</span>
 				</div>
 				<div id="right_cont_part2">
@@ -241,7 +226,6 @@
 						<p>Helping you plan the instructional design Whatever product or system you’re writing documentation for, people reading it go through a ‘mental journey’ </p>
 						</div>
 					</div>
-
 					<div class="right_cont_detail">
 						<span id="userpic">
 							<img id="userphoto" src="images/user icon/userpic1.jpg" />
@@ -258,10 +242,8 @@
 							</li>
 						</ul>
 					</div>
-
 					<span id="Delimiter2">New Messages</span>
 				</div>
-
 				<div id="right_cont_part3">
 					<div class="right_cont_detail">
 						<span id="userpic">
